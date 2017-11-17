@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--When implementing this on a view, use the backgroundTint of the view to define the border color of yourview -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <solid android:color="@color/light_gray" />
+
+    <padding
+        android:top="5dp"
+        android:bottom="5dp"/>
+
+    <corners android:radius="10dp" />
+</shape>

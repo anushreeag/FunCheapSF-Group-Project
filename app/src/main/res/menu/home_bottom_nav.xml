@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
+    app:bbn_itemColorActive="@color/primary"
+    app:bbn_itemColorInactive="@color/colorGrey"
+    app:bbn_rippleColor="@color/primary_light">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_map"
+        android:title="@string/bottom_nav_search" />
+    <item
+        android:id="@+id/action_bookmarks"
+        android:icon="@drawable/ic_book_multiple"
+        android:title="@string/bottom_nav_bookmarks" />
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_account_circle"
+        android:title="@string/bottom_nav_profile" />
+</menu>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filter_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:elevation="@dimen/z_bottom_sheet"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="@dimen/height_toolbar"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+    <HorizontalScrollView
+        android:id="@+id/filter_chips_scrollview"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_toolbar"
+        android:background="@color/colorWhite"
+        android:clickable="false"
+        android:scrollbarSize="@dimen/margin_tiny"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/filter_chips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingStart="@dimen/margin_medium" />
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/horizontal_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@id/filter_chips_scrollview" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/fab_save"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_chips_scrollview"
+        app:layout_constraintVertical_bias="0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_item_height_medium"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ic_search"
+                style="@style/EditFilterIcon"
+                android:layout_marginEnd="16dp"
+                android:focusableInTouchMode="true"
+                android:src="@drawable/ic_magnify" />
+
+            <EditText
+                android:id="@+id/query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:hint="@string/search" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_item_height_medium"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ic_when"
+                style="@style/EditFilterIcon"
+                android:src="@drawable/ic_calendar_clock" />
+
+            <Spinner
+                android:id="@+id/when_spin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_item_height_medium"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ic_where"
+                style="@style/EditFilterIcon"
+                android:src="@drawable/ic_map_marker" />
+
+            <AutoCompleteTextView
+                android:id="@+id/edit_where"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/city" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_item_height_medium"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ic_price"
+                style="@style/EditFilterIcon"
+                android:src="@drawable/ic_currency_usd" />
+
+            <org.honorato.multistatetogglebutton.MultiStateToggleButton
+                android:id="@+id/price_mstb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mstbColorNotPressedBackground="@color/mdtp_white"
+                app:mstbColorPressedBackground="@color/light_blue"
+                app:mstbPrimaryColor="@color/light_blue"
+                app:mstbSecondaryColor="@color/mdtp_white"
+                app:values="@array/price_options_array" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_item_height_medium"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ic_category"
+                style="@style/EditFilterIcon"
+                android:src="@drawable/ic_ticket" />
+
+            <Spinner
+                android:id="@+id/category_spin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <org.apmem.tools.layouts.FlowLayout
+            android:id="@+id/category_chips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="36dp"
+            android:animateLayoutChanges="true" />
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_standard"
+        android:src="@drawable/ic_content_save"
+        android:tint="@color/accent"
+        app:backgroundTint="@color/colorWhite"
+        app:elevation="6dp"
+        app:layout_constraintBottom_toTopOf="@id/fab_apply"
+        app:layout_constraintLeft_toLeftOf="@id/fab_apply"
+        app:layout_constraintRight_toRightOf="@id/fab_apply" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_standard"
+        android:layout_marginEnd="@dimen/margin_fab"
+        android:src="@drawable/ic_check"
+        android:tint="@color/icon_tint_light"
+        app:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

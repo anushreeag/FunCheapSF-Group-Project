@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/primary"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/ivBackdrop"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:background="@color/extra_extra_light_gray"
+                android:scaleType="centerCrop"
+                android:transitionName="profile"
+                app:layout_collapseMode="parallax"
+                tools:src="@drawable/blue_angels" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:paddingEnd="16dp"
+                android:theme="@style/ThemeOverlay.MyApp.ActionBar"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutAnimation="@anim/detail_activity_enter"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_detail_bottom">
+
+            <TextView
+                android:id="@+id/tvEventName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                android:textSize="@dimen/largeText"
+                tools:text="Final Fridays Family Dance Party | South SF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layout_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_item_height_small"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:onClick="onCalenderClick">
+
+                    <ImageView
+                        android:id="@+id/ivCalender"
+                        style="@style/EditFilterIcon"
+                        android:src="@drawable/ic_calendar" />
+
+                    <TextView
+                        android:id="@+id/tvEventDate"
+                        style="@style/SecondaryText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textStart"
+                        tools:text="Today, October 27 - 04:00 PM" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_item_height_small"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:onClick="onDirectionsClick">
+
+                    <ImageView
+                        android:id="@+id/ic_where"
+                        style="@style/EditFilterIcon"
+                        android:src="@drawable/ic_map_marker" />
+
+                    <TextView
+                        android:id="@+id/tvEventAddress"
+                        style="@style/SecondaryText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="840 West Orange Ave, South San Francisco, CA" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_item_height_small">
+
+                    <ImageView
+                        android:id="@+id/ic_price"
+                        style="@style/EditFilterIcon"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_ticket" />
+
+                    <TextView
+                        android:id="@+id/tvEventCost"
+                        style="@style/SecondaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/ic_price"
+                        tools:text="FREE" />
+
+                    <FrameLayout
+                        android:id="@+id/layout_bookmark"
+                        android:layout_width="@dimen/image_large"
+                        android:layout_height="@dimen/image_large"
+                        android:layout_alignParentEnd="true"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:onClick="onSaveClick">
+
+                        <ImageView
+                            android:id="@+id/ivBookmark"
+                            style="@style/EditFilterIcon"
+                            android:layout_gravity="center"
+                            android:layout_margin="0dp"
+                            android:src="@drawable/ic_bookmark"
+                            android:tint="@color/icon_tint_blue" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/layout_share"
+                        android:layout_width="@dimen/image_large"
+                        android:layout_height="@dimen/image_large"
+                        android:layout_toLeftOf="@id/layout_bookmark"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:onClick="onShareClick">
+
+                        <ImageView
+                            android:id="@+id/ivShare"
+                            style="@style/EditFilterIcon"
+                            android:layout_gravity="center"
+                            android:layout_margin="0dp"
+                            android:src="@drawable/ic_share_variant" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/layout_link"
+                        android:layout_width="@dimen/image_large"
+                        android:layout_height="@dimen/image_large"
+                        android:layout_toLeftOf="@id/layout_share"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:onClick="onLinkClick">
+
+                        <ImageView
+                            android:id="@+id/ivLink"
+                            style="@style/EditFilterIcon"
+                            android:layout_gravity="center"
+                            android:layout_margin="0dp"
+                            android:src="@drawable/ic_web" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <org.apmem.tools.layouts.FlowLayout
+                    android:id="@+id/llEventCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:orientation="horizontal" />
+
+                <View
+                    android:id="@+id/lineDivider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:background="@color/light_gray" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:text="@string/detail_about"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+
+            <org.sufficientlysecure.htmltextview.HtmlTextView
+                android:id="@+id/tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textColor="@color/primary_text" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginEnd="@dimen/margin_standard"
+                android:layout_marginStart="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:elevation="@dimen/cardview_elevation"
+                card_view:cardCornerRadius="@dimen/cardview_corner_radius"
+                card_view:cardElevation="@dimen/cardview_elevation">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/map_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="onDirectionsClick"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvMapAddress"
+                        style="@style/SecondaryText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_large"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toTopOf="@+id/map"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="840 West Orange Ave, South San Francisco, CA" />
+
+                    <fragment
+                        android:id="@+id/map"
+                        class="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvMapAddress" />
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

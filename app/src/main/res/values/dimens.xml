@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_fab">16dp</dimen>
+    <dimen name="height_toolbar">56dp</dimen>
+    <dimen name="list_item_height_small">48dp</dimen>
+    <dimen name="list_item_height_medium">64dp</dimen>
+
+    <dimen name="padding_tiny">2dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_xlarge">24dp</dimen>
+    <dimen name="padding_detail_bottom">100dp</dimen>
+
+    <dimen name="image_tiny">20dp</dimen>
+    <dimen name="image_small">24dp</dimen>
+    <dimen name="image_medium">36dp</dimen>
+    <dimen name="image_large">48dp</dimen>
+
+    <dimen name="margin_tiny">2dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_xlarge">24dp</dimen>
+    <dimen name="margin_standard">16dp</dimen>
+
+    <dimen name="tab_indicator_height">3dp</dimen>
+
+    <dimen name="largeText">25sp</dimen>
+    <dimen name="mediumText">16sp</dimen>
+    <dimen name="smallText">14sp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="cardview_elevation">2dp</dimen>
+    <dimen name="cardview_corner_radius">3dp</dimen>
+
+    <dimen name="padding_top">5dp</dimen>
+    <dimen name="padding_left">10dp</dimen>
+
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="image_size">30dp</dimen>
+    <dimen name="button_margin">40dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="z_bottom_sheet">2dp</dimen>
+    <dimen name="bottom_bar_elevation">8dp</dimen>
+    <dimen name="app_bar_elevation">4dp</dimen>
+
+    <!-- Override BottomNav Dimens -->
+    <!-- Adjust this to change the amount of elevation -->
+    <dimen name="bbn_elevation">8dp</dimen>
+    <!-- This sets the padding to 0 -->
+    <dimen name="bbn_top_shadow_height">0dp</dimen>
+
+</resources>

@@ -1,0 +1,27 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.funcheap.funmapsf.features.home.HomeFragment">
+
+    <FrameLayout
+        android:id="@+id/content_frame_home_fragment"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_fab"
+        android:src="@drawable/ic_tune"
+        android:tint="@color/icon_tint_light"
+        app:elevation="6dp"
+        app:layout_anchor="@+id/filter_bottom_sheet"
+        app:layout_anchorGravity="top|right|end" />
+
+    <include layout="@layout/fragment_edit_filter" />
+
+</android.support.design.widget.CoordinatorLayout>
